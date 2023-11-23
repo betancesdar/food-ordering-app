@@ -1,6 +1,6 @@
 export default function MenuItem() {
     return (
-      <div className="bg-gray-200 p-4 rounded-lg text-center shadow-lg hover:bg-white hover:shadow-primary">
+      <div className="bg-gray-200 p-4 rounded-lg text-center shadow-lg transition-all hover:bg-white hover:shadow-primary">
         <img src="/pepperoni.png" alt="pizza" />
         <h4 className="font-semibold my-3 text-xl">Pepperoni Pizza</h4>
         <p className="text-gray-500 text-sm">
