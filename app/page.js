@@ -8,11 +8,9 @@ import SectionHeaders from '@/components/layout/SectionsHeaders'
 export default function Home() {
   return (
     <>
-      <Header />
       <Hero />
       <HomeMenu />
       <AboutUs />
-      <Footer />
     </>
   )
 }
