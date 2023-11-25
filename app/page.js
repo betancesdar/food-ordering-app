@@ -1,9 +1,6 @@
-import AboutUs from '@/components/about/AboutUs'
-import Footer from '@/components/footer/Footer'
-import Header from '@/components/layout/Header'
-import Hero from '@/components/layout/Hero'
-import HomeMenu from '@/components/layout/HomeMenu'
-import SectionHeaders from '@/components/layout/SectionsHeaders'
+import AboutUs from '/components/about/AboutUs'
+import Hero from '/components/layout/Hero'
+import HomeMenu from '/components/layout/HomeMenu'
 
 export default function Home() {
   return (

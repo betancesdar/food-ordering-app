@@ -1,7 +1,7 @@
 import { Roboto } from 'next/font/google'
 import './globals.css'
-import Header from '@/components/layout/Header'
-import Footer from '@/components/footer/Footer'
+import Header from '/components/layout/Header'
+import Footer from '/components/footer/Footer'
 
 const roboto = Roboto({ subsets: ['latin'], weight: ['400','500', '700']})
 
