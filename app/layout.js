@@ -1,5 +1,7 @@
 import { Roboto } from 'next/font/google'
 import './globals.css'
+import {ToastContainer}  from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import Header from '/components/layout/Header'
 import Footer from '/components/footer/Footer'
 
@@ -14,7 +16,19 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={roboto.className}>
-          <main className='max-w-4xl mx-auto p-4'>
+          <main className='max-w-4xl mx-auto p-4 m-4'>
+          <ToastContainer
+            position="top-right"
+            autoClose={5000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="colored"
+          />
           <Header />
             {children}
           <Footer />

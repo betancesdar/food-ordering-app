@@ -9,7 +9,7 @@ export default function Footer() {
             mainHeader={"Contact us"}
           />
         </div>
-        <footer className="bg-primary text-white p-8 mt-10">
+        <footer className="bg-primary text-white p-10 mt-10">
           <div className="flex justify-between">
             <div>
               <h2 className="text-2xl font-bold mb-4 underline">Follow us!</h2>

@@ -1,19 +1,50 @@
 "use client";
 import Image from "next/image"
 import { useState } from "react";
+import  {toast}  from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function RegisterPage() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [phone, setPhone] = useState(''); 
+    const [creatingUser, setCreatingUser] = useState(false)
+    const [userCreated, setUserCreated] = useState(false);
 
-    function handleFormSubmit(e) {
+    async function handleFormSubmit(e) {
         e.preventDefault();
-        fetch('/api/register', {
-            method: 'POST',
-            body: JSON.stringify({email, password, phone}),
-            headers: {'Content-type': 'application/json'},
-        });
+        setCreatingUser(true);
+
+        try {
+            await fetch("/api/register", {
+              method: "POST",
+              body: JSON.stringify({email, password, phone}),
+              headers: {"Content-type": "application/json"},
+            });
+            setUserCreated(true);
+            console.log('para probar que esta funcionando')
+            toast.success('User created!', {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "colored",
+            });
+            setCreatingUser(false);
+
+            //clean the input
+            setEmail('');
+            setPassword('');
+            setPhone('');
+        } catch (error) {
+            console.log('Error creating the user: ', error);
+            toast.error('Error creating the user. Please, Try again!');
+            setCreatingUser(false);   
+        }   
+       
     }
 
     return(
